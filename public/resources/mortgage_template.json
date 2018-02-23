@@ -1,0 +1,26 @@
+[
+    {
+      "Transaction Summary": {
+        "ID": "Tran",
+        "Ref": "xxxx",
+        "Version": "19.09.18",
+        "RelDate": "18/09/18",
+        "Beta": true,
+        "Title": "The title reference that is used to look up the value must be displayed in the Multi-lingual table",
+        "Buttons": "VAL",
+        "BEFunction": "lambda function name",
+        "BEType": "A-Asynchronus"
+  
+      }
+    },
+    {
+      "Field Definitions": {
+        "Field": "xxxx",
+        "Type": [ "date", "CCY", "Number", "String", "Comment", "ye/No", "multi", "Drop" ],
+        "Size": 5,
+        "Mandatory": false,
+        "Def": 1,
+        "Valid": [ "date", "CCY", "Number", "String", "Comment", "ye/No", "multi", "Drop" ],
+        "Tab": "Ref"
+      }
+    }]

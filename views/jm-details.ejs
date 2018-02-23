@@ -1,0 +1,230 @@
+<% include partials/header %>
+<div class="container">
+    <dl class="dl-horizontal">
+        <div class="panel panel-heading ">
+            <h3><%= title %> Detail</h3>
+        </div>
+        <% forms.forEach(function(form){ %>
+        <div>
+            <dt>
+                First Name           
+            </dt>
+
+            <dd>
+                <%= form.FirstName %>
+            </dd>
+
+            <dt>
+                Middle Name             
+            </dt>
+
+            <dd>
+                <%= form.MiddleName %>
+            </dd>
+
+            <dt>
+                Last Name              
+            </dt>
+
+            <dd>
+                <%= form.LastName %>
+            </dd>
+
+            <dt>
+                Passport No.
+            </dt>
+
+            <dd>
+                <%= form.PassportNo %>
+            </dd>
+
+            <dt>
+                PIN No
+            </dt>
+
+            <dd>
+                <%= form.PinNo %>
+            </dd>
+
+            <dt>
+                Nationality
+            </dt>
+
+            <dd>
+                <%= form.Nationality %>
+            </dd>
+
+            <dt>
+                Marital Status
+            </dt>
+
+            <dd>
+                <%= form.MaritalStatus %>
+            </dd>
+
+            <dt>
+                Address
+            </dt>
+
+            <dd>
+                <%= form.Address %>
+            </dd>
+
+            <dt>
+                Town
+            </dt>
+
+            <dd>
+                <%= form.Town %>
+            </dd>
+
+            <dt>
+               Postcode
+            </dt>
+
+            <dd>
+                <%= form.Postcode %>
+            </dd>
+
+            <dt>
+                Street
+            </dt>
+
+            <dd>
+                <%= form.Street %>
+            </dd>
+
+            <dt>
+                Country
+            </dt>
+
+            <dd>
+                <%= form.Country %>
+            </dd>
+
+            <dt>
+                Telephone No.
+            </dt>
+
+            <dd>
+                <%= form.TelephoneNo %>
+            </dd>
+
+            <dt>
+                Mobile No.
+            </dt>
+
+            <dd>
+                <%= form.MobileNo %>
+            </dd>
+
+            <dt>
+                Fax
+            </dt>
+
+            <dd>
+                <%= form.Fax %>
+            </dd>
+
+            <dt>
+               Email
+            </dt>
+
+            <dd>
+                <%= form.Email %>
+            </dd>
+
+            <dt>
+                Present Residence (Location or Estate)
+            </dt>
+
+            <dd>
+                <%= form.PresentResidence %>
+            </dd>
+
+            <dt>
+                Duration of occupation
+            </dt>
+
+            <dd>
+                <%= form.DurationOfOccupantion %>
+            </dd>
+
+            <dt>
+                Type Of Ownership
+            </dt>
+
+            <dd>
+                <%= form.TypeOfOwnership %>
+            </dd>
+
+            <dt>
+                CurrentEmployer
+            </dt>
+
+            <dd>
+                <%= form.CurrentEmployer %>
+            </dd>
+
+            <dt>
+                Position
+            </dt>
+
+            <dd>
+                <%= form.Position %>
+            </dd>
+
+            <dt>
+                Nature of Employment
+            </dt>
+
+            <dd>
+                <%= form.NatureOfEmployment %>
+            </dd>
+
+            <dt>
+                Date Hired by current employer
+            </dt>
+
+            <dd>
+                <%= form.DateHiredByCurrentEmployer %>
+            </dd>
+
+            <dt>
+                Nature of Employment of Previous Employer
+            </dt>
+
+            <dd>
+                <%= form.NatureOfEmployment %>
+            </dd>
+
+            <dt>
+                Duration with previous employer (Years)
+            </dt>
+
+            <dd>
+                <%= form.DurationWithPreviousEmployer %>
+            </dd>        
+
+        </div>
+    </dl>
+</div>
+<% }) %>
+<p>
+    <div class="btn btn-default">
+        <a  href="http://localhost:5000/getallforms">Edit</a> 
+    </div>
+
+    <div class="btn btn-default">
+        <a onclick="goBack()">Back to List</a>
+    </div>
+</p>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+
+
+
+<% include partials/footer %>

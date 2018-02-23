@@ -1,0 +1,27 @@
+{
+    "p1":
+      {
+          "name": "Saleeh Salah",
+          "age": 25,
+          "company": "Technocorp"
+      },
+    "p2": 
+      {
+          "name": "Kian Dempley",
+          "age": 21,
+          "company": "Intel Corps"
+      },
+    "p3": 
+      {
+          "name": "John Stones",
+          "age": 35,
+          "company": "Quicklink Consultancy Ltd"
+      },
+    "p4": 
+      {
+          "name": "Roney Baker",
+          "age": 45,
+          "company": "Coca-cola ltd"
+      }
+      
+  }

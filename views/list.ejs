@@ -1,0 +1,10 @@
+<% include partials/header %>
+
+    <h1><%= title %></h1>
+    <ul>
+        <% users.forEach(function(user){ %>
+        <li><%= user.first_name %> <%= user.last_name %> <%= user.email %> - <a  data-id="<%=user.id %>" class="deleteUser" href="#">Delete</a></li>
+        <% }) %>
+    </ul>
+
+    <% include partials/footer %>

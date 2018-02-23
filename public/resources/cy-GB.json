@@ -1,0 +1,26 @@
+{
+	"mortguageAccount":"Cyfrif Morgeisi",
+	"mortguageHolder": "Deiliad y Mortwage",
+	"accountStat": "Nid yw'r swm hwn yn ffigwr setliad terfynol",
+	"currentMontlyPayment": "Taliad misol cyfredol",
+	"message": "Y taliad nesaf sy'n ddyledus ar",
+		
+    "saveGrid": "Cadw Grid",
+    "loadGrid": "llwyth grid",
+    "clearGrid": "grid clir",
+
+
+    "home" : "Cartref",
+    "about" : "Am",
+    "pages" : "Tudalennau",
+    "portfolio" : "Portffolio",
+	"contact": "Cyswllt",
+	
+
+	"moreInfo":"mwy o wybodaeth" ,
+	"toggleSidebar":"toggle Sidebar",
+	
+	"menu1": "menu1",
+	"menu2": "menu2",
+	"menu3": "menu3"	
+}

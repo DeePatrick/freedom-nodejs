@@ -1,0 +1,7 @@
+{
+	"mortguageAccount":"Mortguage Account",
+	"mortguageHolder": "Mortguage Owner",
+	"accountStat": "This amount is not a final settlement figure",
+	"currentMontlyPayment": "Current monthly payment",
+	"message": "Next payment due on:"
+}

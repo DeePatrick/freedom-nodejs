@@ -1,0 +1,26 @@
+{
+	"mortguageAccount":"Mortguage Account",
+	"mortguageHolder": "Mortguage Holder",
+	"accountStat": "This amount is not a final settlement figure",
+	"currentMontlyPayment": "Current monthly payment",
+    "message": "Next payment due on:",
+    
+
+    "saveGrid": "ग्रिड सहेजें",
+    "loadGrid": "लोड ग्रिड",
+    "clearGrid": "साफ़ ग्रिड",
+
+
+    "home" : "होम",
+    "about" : "के बारे में",
+    "pages" : "ेज",
+    "portfolio" : "पोर्टफोलियो",
+    "contact": "संपर्क करें",
+	
+    "moreInfo":"और जानकारी",
+	"toggleSidebar":"toggleSidebar",
+	
+	"menu1": "Menu1",
+	"menu2": "Menu2",
+	"menu3": "Menu3"
+}

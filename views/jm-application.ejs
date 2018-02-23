@@ -1,0 +1,523 @@
+<% include partials/header %>
+<h1>Add Application</h1>
+            <div class="container">
+                <form  method="POST"  action="mortgages/add">
+                    <table class="table table-bordered">
+                        <tr name="w3-black">
+                            <th scope="col" colspan="3" class="color-header font-weight-bold"><strong>A. FIRST APPLICANT INFORMATION</strong></th>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="3" class="font-italic">PERSONAL DETAILS</th>
+                        </tr>
+                        <tr class="w3-lightblue">
+                            <td scope="col">
+                                First Name<span class="star"> *</span>
+                                <input type="text" class="textinput" name="firstname" />
+                            </td>
+                            <td>
+                                Middle Name<span class="star"> *</span>
+                                <input type="text" class="textinput" name="middlename" />
+                            </td>
+                            <td>
+                                Last Name<span class="star"> *</span>
+                                <input type="text" class="textinput"  name="last_name" />
+                            </td>
+                        </tr>
+                        <tr class="w3-lightblue">
+                            <td scope="col">
+                                name / Passport No.<span class="star"> *</span>
+                                <input name="passport" type="text" class="textinput" size="25" />
+                            </td>
+                            <td>
+                                PIN No.<span class="star"> *</span>
+                                <input name ="pin" type="text" class="textinput" size="10" />
+                            </td>
+                            <td>
+                                Nationality<span class="star"> *</span>
+                                <input name="nationality" type="text" class="textinput" size="20" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">
+                                Marital Status
+                            </th>
+                        </tr>
+                        <tr>
+                            <div>
+                                <td>
+                                    <div class="col-md-3 radio">
+                                        <label>
+                                            <input name="Role" type="radio" value="Single" />
+                                            Single
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-md-3 radio">
+                                        <label>
+                                            <input name"Role" type="radio" value="Married" />
+                                            Married
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-md-4 radio">
+                                        <label>
+                                            <input name = "Role" type="radio" value="Divorced" size="20" />
+                                            Divorced
+                                        </label>
+                                        <span asp-valnameation-for="Role" class="text-danger"></span>
+                                    </div>
+                                </td>
+
+                            </div>
+                        </tr>
+                        <tr>
+                            <td colspan="1">
+                                Address<span class="star"> *</span>
+                                <input class="textinput" rows="4" name="address" size="25" />
+                            </td>
+                            <td colspan="1">
+                                Town<span class="star"> *</span>
+                                <input name="town" class="textinput" />
+                            </td>
+                            <td colspan="1">
+                                Postcode<span class="star"> *</span>
+                                <input name="postcode" class="textinput" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">
+                                Street<span class="star"> *</span>
+                                <input class="textinput" rows="4" name="address" size="25" />
+                            </td>
+                            <td colspan="1">
+                                Country<span class="star"> *</span>
+                                <input name ="zipcode" class="textinput" />
+                            </td>
+                            <td colspan="1">
+                                Telephone No.
+                                <input name="telephone" class="textinput" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">
+                                Mobile No.<span class="star"> *</span>
+                                <input class="textinput" rows="4" name="address" size="25" />
+                            </td>
+                            <td colspan="1">
+                                Fax
+                                <input name="zipcode" class="textinput" type="text" />
+                            </td>
+                            <td colspan="1">
+                                Email<span class="star"> *</span>
+                                <input name="telephone" class="textinput" type="email" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="col">
+                                Present Resnameence (Location or Estate) <span class="star"> *</span>
+                                <input asp-for="presentResnameence" type="text" class="form-control" />
+                            </td>
+                            <td scope="col">
+                                Duration of occupation<span class="star"> *</span>
+                                <input asp-for="duration-of-occupation" type="date" class="form-control" />
+                            </td>
+                            <td scope="col">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="inlineCheckbox1" value="option1"> 100% Owned
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="inlineCheckbox2" value="option2">Under Mortgage
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="inlineCheckbox3" value="option3">Rented
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered">
+                        <tr name="w3-black">
+                            <th scope="col" colspan="8" class="color-header font-weight-bold">Dependants</th>
+                        </tr>
+
+
+                        <tr class="w3-lightblue">
+                            <td scope="col" colspan="2">Name<span class="star"> *</span></td>
+                            <td scope="col" colspan="2">Birth date <span>( Age )</span></td>
+                            <td scope="col" colspan="2">Name<span class="star"> *</span></td>
+                            <td scope="col" colspan="2">Birth date <span>( Age )</span></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input name="Name" type="text" class="form-control" />
+                            </td>
+                            <td colspan="2">
+                                <input name="dateofbirth" type="date" class="form-control" />
+                            </td>
+                            <td colspan="2">
+                                <input name="Name" type="text" class="form-control" />
+                            </td>
+                            <td colspan="2">
+                                <input name="dateofbirth" type="date" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input name="Name" type="text" class="form-control" />
+                            </td>
+                            <td colspan="2">
+                                <input name="dateofbirth" type="date" class="form-control" />
+                            </td>
+                            <td colspan="2">
+                                <input name="Name" type="text" class="form-control" />
+                            </td>
+                            <td colspan="2">
+                                <input name="dateofbirth" type="date" class="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input name="Name" type="text" class="form-control" />
+                            </td>
+                            <td colspan="2">
+                                <input name="dateofbirth" type="date" class="form-control" />
+                            </td>
+                            <td colspan="2">
+                                <input name="Name" type="text" class="form-control" />
+                            </td>
+                            <td colspan="2">
+                                <input name="dateofbirth" type="date" class="form-control" />
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered">
+                        <tr name="w3-black">
+                            <th scope="col" colspan="19" class="color-header font-weight-bold">YOUR CURRENT BANKING DETAILS</th>
+                        </tr>
+                        <tr>
+                            <td scope="col" colspan="1"></td>
+                            <td scope="col" colspan="6">Bank </td>
+                            <td scope="col" colspan="6">Branch</td>
+                            <td scope="col" colspan="6">Account No.</td>
+                        </tr>
+                        <tr>
+                            <td scope="col" colspan="1">
+                                1.
+                            </td>
+                            <td scope="col" colspan="6">
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" />
+                                    <span asp-valnameation-for="Email" class="text-danger"></span>
+                                </div>
+                            </td>
+                            <td scope="col" colspan="6">
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </td>
+                            <td scope="col" colspan="6">
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="col" colspan="1">
+                                2.
+                            </td>
+                            <td colspan="6">
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </td>
+                            <td colspan="6">
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </td>
+                            <td colspan="6">
+                                <div class="col-md-10">
+                                    <input type="text" class="form-control" />
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th scope="col" colspan="3" class="color-header font-weight-bold">EMPLOYMENT INFORMATION</th>
+                        </tr>
+                        <tr>
+                            <td scope="col" colspan="3">
+                                Current Employer<span class="star"> *</span>
+                                <input type="text" class="textinput" name="currentemployer" size="75" name="currentemployer" placeholder="Current employer" value="">
+                            </td>
+                        </tr>
+                        <tr class="w3-lightblue">
+                            <td>
+                                Position<span class="star"> *</span>
+                                <input type="text" class="textinput" name="position" size="35" name="position" placeholder="Position" value="">
+                            </td>
+                            <td colspan="2">
+                                Nature of Employment <span class="star"> *</span>
+                                <input type="text" class="textinput" name="natureofemployment" name="natureofemployment" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="col" colspan="4">
+                                Date Hired by current employer <span class="star"> *</span>
+                                <input type="date" class="textinput" name="datehiredbycurrentemployer" size="200" name="datehiredbycurrentemployer" />
+                            </td>
+                        </tr>
+                        <tr class="w3-lightblue">
+                            <td scope="col">
+                                <div>Postal Address<span class="star"> *</span></div>
+                                <textarea class="form-control" name="postaladdress" name="postaladdress" row="2" size="30" placeholder="Postal adresss"></textarea>
+                            </td>
+                            <td>
+                                Town<span class="star"> *</span>
+                                <input type="text" class="textinput" name="emp-town" name="emp-town" size="20" placeholder="Town" value="">
+                            </td>
+                            <td>
+                                Postal Code <span class="star"> *</span>
+                                <input type="text" class="textinput" name="postcode" name="postcode" size="8" placeholder="Postcode" value="" />
+                            </td>
+
+                        </tr>
+                        <tr class="w3-lightblue">
+                            <td scope="col">
+                                Street<span class="star"> *</span>
+                                <input type="text" class="textinput" name="emp-street"  size="25" />
+                            </td>
+                            <td>
+                                Zip code<span class="star"> *</span>
+                                <input type="text" class="textinput" name="emp-zipcode" />
+                                </th>
+                            <td>
+                                Employer Website<span class="star"> *</span>
+                                <input type="text" class="textinput" name="website"  placeholder="https://www." size="22">
+                            </td>
+                        </tr>
+                        <tr class="w3-lightblue">
+                            <td scope="col">
+                                Tel No.<span class="star"> *</span>
+                                <input type="text" class="textinput" name="telno" size="22" />
+                            </td>
+                            <td>
+                                Email<span class="star"> *</span>
+                                <input type="text" class="textinput" name="emp-email" />
+                            </td>
+                            <td>
+                                Fax
+                                <input type="text" class="textinput" name="emp-fax"  size="22">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="col" colspan="4">
+                                Name of Previous Employer, If you have changed employment within the last two (2) years<span class="star"> *</span></label>
+                                <input type="text" class="textinput"  size="30" name="durationwithemployer" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="col" colspan="4">
+                                Position at Previous Employer<span class="star"> *</span></label>
+                                <input type="text" class="textinput"  size="30" name="durationwithemployer" />
+                            </td>
+                        </tr>
+                        <tr class="w3-lightblue">
+                            <td scope="col" colspan="2">
+                                <span>Nature of Employment  &NonBreakingSpace; &nbsp;&nbsp;&nbsp;</span>
+                                <input type="text" class="textinput"  size="30" name="previousemployernatureemployement" />                       
+                            </td>
+                            <td>
+                                Duration with previous employer (Years)
+                                <input type="number" class="textinput" name="emp-email" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="3"></th>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th class="color-header font-weight-bold" colspan="24">INCOME DETAILS (per annum)</th>
+                        </tr>
+                        <tr>
+                            <td>Basic Salary</td>
+                            <td colspan="11"><input type="number" class="textinput"  name="basicsalary" /></td>
+
+                            <td>Commissions Earned</td>
+                            <td colspan="11"><input type="number" class="textinput"  name="commissionearned" /></td>
+
+                        </tr>
+                        <tr>
+                            <td>House Allowance</td>
+                            <td colspan="11"><input type="number" class="textinput"  name="houseallowance" /></td>
+                            <td>Owner Occupier allowance</td>
+                            <td colspan="11"><input type="number" class="textinput"  name="owneroccupierallowance" /></td>
+                        </tr>
+                        <tr>
+                            <td>Other Pay / Income </td>
+                            <td colspan="11"><input type="number" class="textinput"  name="otherpay" /></td>
+                            <td>Details of Other Pay</td>
+                            <td colspan="11"><textarea type="text" class="textinput"  name="detailsofotherpay" placeholder="I work four jobs"></textarea></td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th class="color-header font-weight-bold" colspan="12">DETAILS OF FINANCIAL COMMITMENTS (REPAYMENT AMOUNTS) </th>
+                        </tr>
+                        <tr>
+                            <td colspan="1">Sacco Loans </td>
+                            <td><input type="number" step="0.01" class="form-control" /></td>
+                            <td><input type="number" step="0.01" class="form-control"  /></td>
+                            <td><input type="number" step="0.01" class="form-control"  /></td>
+                            <td><input type="number" step="0.01" class="form-control" /></td>
+
+                            <td colspan="1">Bank Loan(s) </td>
+                            <td><input type="number" step="0.01" class="form-control" /></td>
+                            <td><input type="number" step="0.01" class="form-control"  /></td>
+                            <td><input type="number" step="0.01" class="form-control"  /></td>
+                            <td><input type="number" step="0.01" class="form-control" /></td>
+
+                        </tr>
+                        <tr>
+                            <td colspan="1">Bank Overdraft </td>
+                            <td><input type="number" step="0.01" class="form-control" /></td>
+                            <td><input type="number" step="0.01" class="form-control"  /></td>
+                            <td><input type="number" step="0.01" class="form-control"  /></td>
+                            <td><input type="number" step="0.01" class="form-control" /></td>
+
+
+                            <td colspan="1">Mortgage Repayments</td>
+                            <td><input type="number" step="0.01" class="form-control" /></td>
+                            <td><input type="number" step="0.01" class="form-control"  /></td>
+                            <td><input type="number" step="0.01" class="form-control"  /></td>
+                            <td><input type="number" step="0.01" class="form-control" /></td>                      
+                        </tr>
+                        <tr>
+                            <td>Details of other commitments</td>
+                            <td colspan="12"><textarea type="text" class="form-control" rows="2"></textarea></td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th class="color-header font-weight-bold" colspan="6">
+                                C. DECLARATION OF OTHER ASSETS<br />
+                                <small> &nbsp;&nbsp;&nbsp; Please indicate details of other immovable assets that you have</small>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="6">Do you have any existing mortgages with any other financial institution/bank? If so state</td>
+                        </tr>
+                        <tr>
+                            <td colspan="6"> <input type="text" class="form-control"  name="financialcomit" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Address of the property LR No</td>
+                            <td colspan="3">Name of Mortgage</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><textarea type="text" class="form-control"  rows="3" name="addresofprop"></textarea></td>
+                            <td colspan="3"> <input type="text" class="form-control" name="nameofmortgage"  /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Approx outstanding balance</td>
+                            <td colspan="2">Monthly rental income (if applicable) </td>
+                            <td colspan="2">Monthly Loan Repayment</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="text" class="form-control" name="approxoutstandbal"  /></td>
+                            <td colspan="2"><input type="text" class="form-control" name="monthlyrentalincome"  /></td>
+                            <td colspan="2"><input type="text" class="form-control" name="monthlyloanrepayment"  /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Name & Address of your advocates
+                            </td>
+                            <td colspan="4"><textarea type="text" class="form-control" name="nameandaddressofyouradvocates" rows="3" name="nameandaddressofyouradvocates"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Have you ever been declared
+                                bankrupt /insolvent or had a
+                                court order for debt registered
+                                against you?
+                            </td>
+                            <td colspan="4">If yes, give details &nbsp;&nbsp; &nbsp;<textarea type="text" class="form-control" name="nameandaddressofyouradvocates" rows="3" name="nameandaddressofyouradvocates"></textarea></td>
+                        </tr>
+
+                    </table>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th class="color-header font-weight-bold" colspan="6">
+                                D. LOAN PARTICULARS
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="3">Amount Required (GBP)</td>
+                            <td colspan="3">Installment repayment period in months</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><input type="text" name="amountrequired" /></td>
+                            <td colspan="1">&nbsp;&nbsp;<input type="text" name="Installmentrepaymentyears" /></td>
+                            <td colspan="2"> Months &nbsp;<input type="text" name="Installmentrepayment"  /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Amount in words</td>
+                            <td colspan="4"><input type="text" class="form-control"  name="amountinwords" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="6">Purpose of Loan (tick whichever is applicable)</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                Purchase house&nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" name="purchasehouse"  />
+                            </td>
+                            <td colspan="2">
+                                Construction &nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" name="construction"  />
+                            </td>
+                            <td colspan="2">
+                                Equity release&nbsp;&nbsp;&nbsp;
+                                <input type="checkbox" name="equityrelease"  />
+                            </td>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th class="color-header font-weight-bold" colspan="6">
+                                E.  PARTICULARS OF PROPERTY TO BE MORTGAGED
+                            </th>
+                        </tr>
+                        <tr>
+                            <td colspan="3">
+                                Plot No. of property to be mortgaged ( Street name and
+                                number if applicable)
+                            </td>
+                            <td colspan="3">Name, address and telephone no of vendor</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><input type="text"  name="AddressOfPropertyToBeMortgaged" /></td>
+                            <td colspan="3"><input type="text"  name="NameAddressTelNoOfVendor" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Name, address and telephone No of occupier, if any </td>
+                            <td colspan="4">Where will the keys be obtained?</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3"><input type="text" name="NameAddressTelNoOfOccupier" /></td>
+                            <td colspan="3"><input type="text"  name="WherewillKeysBeObtained" /></td>
+                        </tr>
+
+                    </table>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th scope="col" class="text-center"><input type="submit" value="Save" class="btn btn-default" /><a href="/Account/Login/" value="Exit" class="btn btn-default">Exit</a></th>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+<% include partials/footer %>

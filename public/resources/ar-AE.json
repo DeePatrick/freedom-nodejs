@@ -1,0 +1,30 @@
+{
+	"mortguageAccount":"حساب الرهن ",
+	"mortguageHolder": "حامل مورتغواج",
+	"accountStat": "وهذا المبلغ ليس رقما نهائيا للتسوية",
+	"currentMontlyPayment": "الدفع الشهري الحالي",
+	"message": "الدفعة التالية مستحقة الدفع:",
+
+	
+    "saveGrid": "حفظ الشبكة",
+    "loadGrid": "تحميل الشبكة",
+    "clearGrid": "مسح الشبكة",
+
+
+    "home" : "الصفحة الرئيسية",
+    "about" : "حول",
+    "pages" : "صفحات",
+    "portfolio" : "محفظة",
+    "contact": "اتصل",
+	
+	"menu1": "القائمة 1",
+	"menu2": "القائمة 2",
+	"menu3": "القائمة 3",
+	
+	
+	
+	"moreInfo":"مزيد من المعلومات",
+	"toggleSidebar":"تبديل الشريط الجانبي"
+	  
+
+}

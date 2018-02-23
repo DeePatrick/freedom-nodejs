@@ -1,0 +1,30 @@
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="/javascripts/jquery.miranda.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+  <div>
+    <nav class="navbar navbar-inverse" role="navigation" style="padding-left:130px;">
+         <ul class="nav navbar-nav">
+            <% for(var i=0; i <nav.length ; i++){ %>
+              <li><a href="<%=nav[i].Link%>"><%=nav[i].Text%></a></li>
+            <%}%>
+      </ul>
+    </nav>
+  </div>
+  <div class='container'>
+    <h2>My <%= title %></h2>
+  </div>
+  <div>
+    <% for(var i=0; i <books.length ; i++){ %>
+      <li><a href="<%=books[i].Link%>"><%=nav[i].Text%></a></li>
+    <%}%>
+  </div>
+<%=books.name%>
+</body>
+</html>
+

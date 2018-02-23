@@ -1,0 +1,25 @@
+
+
+<h3><%= title %> Transaction Summary</h3>
+<hr/><br/>
+
+<ul class="well well-sm" style="list-style: none;">
+    <% forms.forEach(function(form){ %>
+    <li class="greay">Your Mortgage -  <strong>JM00<%= form.ID %><%= form.LastName.toUpperCase()  %> </strong></li>
+    <hr />
+    <li class="greay">
+         Mortgage holder(s) <%= form.FirstName %> <%= form.LastName %> <%= form.MiddleName %>
+    </li class="greay">
+    <hr />
+    <li class="greay">
+       <strong><%= form.installmenttobepaidbytoday %> </strong> as at <%= form.Today %> -  "This is not the final figure"
+    </li class="greay">
+    <hr />
+    <li class="greay"><strong><%= form.installmentpermonth %></strong>  - Current monthly Payment </li>
+    <hr />
+    <li class="greay">Next Payment due on: <%= form.NEXTDUEDATE %></li>
+    <hr />
+<br/><br/>
+    <% }) %>
+</ul>
+<% include partials/footer %>

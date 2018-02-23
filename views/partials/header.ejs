@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/gridstack.css" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/autofill/2.2.2/css/autoFill.dataTables.min.css" />
+    <!--<script src="/javascripts/jquery.js"></script>-->
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.0/jquery-ui.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="/javascripts/gridstack.js"></script>
+    <script src="/javascripts/main.js"></script>
+    <script src="/javascripts/gridstack.jQueryUI.js"></script>
+    <script src="/javascripts/translate.js"></script>
+    <script src="/javascripts/fetch.js"></script>
+    <script src="/javascripts/jqxcore.js"></script>
+    <script src="/javascripts/jqxtree.js"></script>
+    <script src="/javascripts/panels.js"></script>
+    <script src="//cdn.datatables.net/autofill/2.2.2/js/dataTables.autoFill.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-toggle').dropdown();
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //Code for Changing Navs
+            $('#menu_nav_1').click(function () {
+                $('#sidebarCollapse1').toggleClass('hidden');
+                $('#sidebar').toggleClass('sidebar1');
+                $('#sidebar').toggleClass('hidden');
+            });
+
+            $('#menu_nav_2').click(function () {
+                $('#sidebarCollapse2').toggleClass('hidden');
+                $('#sidebar').toggleClass('sidebar2');
+                $('#sidebar').toggleClass('hidden');
+                $('#dismiss').toggleClass('hidden');
+            });
+
+            $('#menu_nav_3').on('click', function () {
+                $('#sidebarCollapse3').toggleClass('hidden');
+                $('#sidebar').toggleClass('sidebar3');
+                $('#sidebar').toggleClass('hidden');
+                $('#header-short').toggleClass('hidden');
+            });
+
+            //Code for Sidebar Collapse
+            $('#sidebarCollapse1').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+
+            $('#sidebarCollapse2').on('click', function () {
+                $('#sidebar').addClass('active2');
+                $('.overlay').fadeIn();
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+
+            $('#sidebarCollapse3').on('click', function () {
+                $('#sidebar').toggleClass('active3');
+            });
+
+            //Code to dismiss Nav 2 (Overlay Nav)
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active2');
+                $('.overlay').fadeOut();
+            });
+        });
+
+        // //Code for Changing language item from dropdown
+        $(function () {
+            var data = false;
+            var english =
+                [
+                    {
+                        "text": "Home",
+                        "id": "1",
+                        "parentid": "-1"
+                    },
+                    {
+                        "id": "2",
+                        "parentid": "1",
+                        "text": "Home 1"
+                    },
+                    {
+                        "id": "3",
+                        "parentid": "1",
+                        "text": "Home 2"
+                    },
+                    {
+                        "id": "4",
+                        "parentid": "1",
+                        "text": "Home 3"
+                    },
+                    {
+                        "text": "About",
+                        "id": "5",
+                        "parentid": "-1"
+                    },
+                    {
+                        "text": "Pages",
+                        "id": "6",
+                        "parentid": "-1"
+                    },
+                    {
+                        "id": "7",
+                        "parentid": "6",
+                        "text": "Page 1"
+                    },
+                    {
+                        "id": "8",
+                        "text": "Page 2",
+                        "parentid": "6"
+                    },
+                    {
+                        "id": "9",
+                        "text": "Page 3",
+                        "parentid": "6"
+                    },
+                    {
+                        "text": "Portfolio",
+                        "id": "10",
+                        "parentid": "-1"
+                    },
+                    {
+                        "text": "Contact",
+                        "id": "11",
+                        "parentid": "-1"
+                    }
+                ];
+            var french =
+                [
+                    {
+                        "text": "Accueil",
+                        "id": "1",
+                        "parentid": "-1"
+                    },
+                    {
+                        "id": "2",
+                        "parentid": "1",
+                        "text": "Accueil 1"
+                    },
+                    {
+                        "id": "3",
+                        "parentid": "1",
+                        "text": "Accueil 2"
+                    },
+                    {
+                        "id": "4",
+                        "parentid": "1",
+                        "text": "Accueil 3"
+                    },
+                    {
+                        "text": "Sur",
+                        "id": "5",
+                        "parentid": "-1"
+                    },
+                    {
+                        "text": "Pages",
+                        "id": "6",
+                        "parentid": "-1"
+                    },
+                    {
+                        "id": "7",
+                        "parentid": "6",
+                        "text": "Page 1"
+                    },
+                    {
+                        "id": "8",
+                        "text": "Page 2",
+                        "parentid": "6"
+                    },
+                    {
+                        "id": "9",
+                        "text": "Page 3",
+                        "parentid": "6"
+                    },
+                    {
+                        "text": "Portefeuille",
+                        "id": "10",
+                        "parentid": "-1"
+                    },
+                    {
+                        "text": "Contact",
+                        "id": "11",
+                        "parentid": "-1"
+                    }
+                ];
+            var welsh = [
+                {
+                    "text": "Cartref",
+                    "id": "1",
+                    "parentid": "-1"
+                },
+                {
+                    "id": "2",
+                    "parentid": "1",
+                    "text": "Cartref 1"
+                },
+                {
+                    "id": "3",
+                    "parentid": "1",
+                    "text": "Cartref 2"
+                },
+                {
+                    "id": "4",
+                    "parentid": "1",
+                    "text": "Cartref 3"
+                },
+                {
+                    "text": "Am",
+                    "id": "5",
+                    "parentid": "-1"
+                },
+                {
+                    "text": "Tudalennau",
+                    "id": "6",
+                    "parentid": "-1"
+                },
+                {
+                    "id": "7",
+                    "parentid": "6",
+                    "text": "Tudalennau 1"
+                },
+                {
+                    "id": "8",
+                    "text": "Tudalennau 2",
+                    "parentid": "6"
+                },
+                {
+                    "id": "9",
+                    "text": "Tudalennau 3",
+                    "parentid": "6"
+                },
+                {
+                    "text": "Portfolio",
+                    "id": "10",
+                    "parentid": "-1"
+                },
+                {
+                    "text": "Cyswllt",
+                    "id": "11",
+                    "parentid": "-1"
+                }
+            ];
+            var portuguese = [
+                {
+                    "text": "Casa",
+                    "id": "1",
+                    "parentid": "-1"
+                },
+                {
+                    "id": "2",
+                    "parentid": "1",
+                    "text": "Casa 1"
+                },
+                {
+                    "id": "3",
+                    "parentid": "1",
+                    "text": "Casa 2"
+                },
+                {
+                    "id": "4",
+                    "parentid": "1",
+                    "text": "Casa 3"
+                },
+                {
+                    "text": "Sobre",
+                    "id": "5",
+                    "parentid": "-1"
+                },
+                {
+                    "text": "Páginas",
+                    "id": "6",
+                    "parentid": "-1"
+                },
+                {
+                    "id": "7",
+                    "parentid": "6",
+                    "text": "Páginas 1"
+                },
+                {
+                    "id": "8",
+                    "text": "Páginas 2",
+                    "parentid": "6"
+                },
+                {
+                    "id": "9",
+                    "text": "Páginas 3",
+                    "parentid": "6"
+                },
+                {
+                    "text": "Carteira",
+                    "id": "10",
+                    "parentid": "-1"
+                },
+                {
+                    "text": "Contato",
+                    "id": "11",
+                    "parentid": "-1"
+                }
+            ];
+            var arabic = [
+                {
+                    "text": "الصفحة الرئيسية",
+                    "id": "1",
+                    "parentid": "-1"
+                },
+                {
+                    "id": "2",
+                    "parentid": "1",
+                    "text": "الصفحة الرئيسية1"
+                },
+                {
+                    "id": "3",
+                    "parentid": "1",
+                    "text": "الصفحة الرئيسية2"
+                },
+                {
+                    "id": "4",
+                    "parentid": "1",
+                    "text": "الصفحة الرئيسية3"
+                },
+                {
+                    "text": "حول",
+                    "id": "5",
+                    "parentid": "-1"
+                },
+                {
+                    "text": "صفحات",
+                    "id": "6",
+                    "parentid": "-1"
+                },
+                {
+                    "id": "7",
+                    "parentid": "6",
+                    "text": "1صفحات"
+                },
+                {
+                    "id": "8",
+                    "text": "2صفحات",
+                    "parentid": "6"
+                },
+                {
+                    "id": "9",
+                    "text": "3صفحات",
+                    "parentid": "6"
+                },
+                {
+                    "text": "محفظة",
+                    "id": "10",
+                    "parentid": "-1"
+                },
+                {
+                    "text": "اتصل",
+                    "id": "11",
+                    "parentid": "-1"
+                }
+            ];
+            var hindu = [
+                {
+                    "text": "होम",
+                    "id": "1",
+                    "parentid": "-1"
+                },
+                {
+                    "id": "2",
+                    "parentid": "1",
+                    "text": "होम 1"
+                },
+                {
+                    "id": "3",
+                    "parentid": "1",
+                    "text": "होम 2"
+                },
+                {
+                    "id": "4",
+                    "parentid": "1",
+                    "text": "होम 3"
+                },
+                {
+                    "text": "के बारे में",
+                    "id": "5",
+                    "parentid": "-1"
+                },
+                {
+                    "text": "ेज",
+                    "id": "6",
+                    "parentid": "-1"
+                },
+                {
+                    "id": "7",
+                    "parentid": "6",
+                    "text": "Page 1"
+                },
+                {
+                    "id": "8",
+                    "text": "ेज 2",
+                    "parentid": "6"
+                },
+                {
+                    "id": "9",
+                    "text": "ेज 3",
+                    "parentid": "6"
+                },
+                {
+                    "text": "पोर्टफोलियो",
+                    "id": "10",
+                    "parentid": "-1"
+                },
+                {
+                    "text": "संपर्क करें",
+                    "id": "11",
+                    "parentid": "-1"
+                }
+            ];
+
+            var currentLng;
+
+            //translation code
+            $("#menus").click
+                (function () {
+                    if (data === false) {
+                        alert("default language selected!");
+                        (function () {
+                            var translate = new window.Translate();
+                            currentLng = 'en-GB';
+                            var attributeName = 'data-tag';
+                            translate.init(attributeName, currentLng);
+                            translate.process();
+                            var builddata1 = function () {
+                                var source = [];
+                                var items = [];
+                                // build hierarchical source.
+                                data = english;
+                                for (i = 0; i < data.length; i++) {
+                                    var item = data[i];
+                                    var label = item["text"];
+                                    var parentid = item["parentid"];
+                                    var id = item["id"];
+
+                                    if (items[parentid]) {
+                                        var item = { parentid: parentid, label: label, item: item };
+                                        if (!items[parentid].items) {
+                                            items[parentid].items = [];
+                                        }
+                                        items[parentid].items[items[parentid].items.length] = item;
+                                        items[id] = item;
+                                    }
+                                    else {
+                                        items[id] = { parentid: parentid, label: label, item: item };
+                                        source[id] = items[id];
+                                    }
+                                }
+                                return source;
+                            }
+                            var source1 = builddata1();
+
+                            var buildUL = function (parent, items) {
+                                $.each(items, function () {
+                                    if (this.label) {
+                                        //Parent Items Created
+                                        var li = $("<li><a 'data-toggle='collapse' class= list-unstyled components'>" + this.label + "</a></li>");
+                                        li.appendTo(parent);
+                                        //Sub Items Created
+                                        if (this.items && this.items.length > 0) {
+                                            var ul = $("<ul class ='collapse list-unstyled'><li><a>" + this.label + "</a></li></ul>");
+                                            ul.appendTo(li);
+                                            buildUL(ul, this.items);
+                                        }
+                                    }
+                                });
+                            }
+                            var ul = $("<ul class = 'menuitems'></ul>");
+                            $('#jqxMenu').empty();
+                            ul.appendTo('#jqxMenu');
+                            buildUL(ul, source1);
+                            ('#jqxMenu').jqxTree({});
+                        })();
+                    }
+
+                });
+
+            $("#fr").click(function () {
+                alert("French language selected!");
+                (function () {
+                    var translate = new window.Translate();
+                    currentLng = 'fr-CH';
+                    var attributeName = 'data-tag';
+                    translate.init(attributeName, currentLng);
+                    translate.process();
+                    var builddata1 = function () {
+                        var source = [];
+                        var items = [];
+                        // build hierarchical source.
+                        data = french;
+                        for (i = 0; i < data.length; i++) {
+                            var item = data[i];
+                            var label = item["text"];
+                            var parentid = item["parentid"];
+                            var id = item["id"];
+
+                            if (items[parentid]) {
+                                var item = { parentid: parentid, label: label, item: item };
+                                if (!items[parentid].items) {
+                                    items[parentid].items = [];
+                                }
+                                items[parentid].items[items[parentid].items.length] = item;
+                                items[id] = item;
+                            }
+                            else {
+                                items[id] = { parentid: parentid, label: label, item: item };
+                                source[id] = items[id];
+                            }
+                        }
+                        return source;
+                    }
+                    var source1 = builddata1();
+
+                    var buildUL = function (parent, items) {
+                        $.each(items, function () {
+                            if (this.label) {
+                                //Parent Items Created
+                                var li = $("<li><a 'data-toggle='collapse' class= list-unstyled components'>" + this.label + "</a></li>");
+                                li.appendTo(parent);
+                                //Sub Items Created
+                                if (this.items && this.items.length > 0) {
+                                    var ul = $("<ul class ='collapse list-unstyled'><li><a>" + this.label + "</a></li></ul>");
+                                    ul.appendTo(li);
+                                    buildUL(ul, this.items);
+                                }
+                            }
+                        });
+                    }
+                    var ul = $("<ul class = 'menuitems'></ul>");
+                    $('#jqxMenu').empty();
+                    ul.appendTo('#jqxMenu');
+                    buildUL(ul, source1);
+                    ('#jqxMenu').jqxTree({});
+                })();
+            });
+
+            $("#en").click(function () {
+                alert("English language selected!");
+                (function () {
+                    var translate = new window.Translate();
+                    currentLng = 'en-GB';
+                    var attributeName = 'data-tag';
+                    translate.init(attributeName, currentLng);
+                    translate.process();
+                    var builddata2 = function () {
+                        var source = [];
+                        var items = [];
+                        // build hierarchical source.
+                        data = english;
+                        for (i = 0; i < data.length; i++) {
+                            var item = data[i];
+                            var label = item["text"];
+                            var parentid = item["parentid"];
+                            var id = item["id"];
+
+                            if (items[parentid]) {
+                                var item = { parentid: parentid, label: label, item: item };
+                                if (!items[parentid].items) {
+                                    items[parentid].items = [];
+                                }
+                                items[parentid].items[items[parentid].items.length] = item;
+                                items[id] = item;
+                            }
+                            else {
+                                items[id] = { parentid: parentid, label: label, item: item };
+                                source[id] = items[id];
+                            }
+                        }
+                        return source;
+                    }
+                    var source2 = builddata2();
+                    var buildUL = function (parent, items) {
+                        $.each(items, function () {
+                            if (this.label) {
+                                //Parent Items Created
+                                var li = $("<li><a 'data-toggle='collapse' class= list-unstyled components'>" + this.label + "</a></li>");
+                                li.appendTo(parent);
+                                //Sub Items Created
+                                if (this.items && this.items.length > 0) {
+                                    var ul = $("<ul class ='collapse list-unstyled'><li><a>" + this.label + "</a></li></ul>");
+                                    ul.appendTo(li);
+                                    buildUL(ul, this.items);
+                                }
+                            }
+                        });
+                    }
+                    var ul = $("<ul class = 'menuitems'></ul>");
+                    $('#jqxMenu').empty();
+                    ul.appendTo("#jqxMenu");
+                    buildUL(ul, source2);
+                    ("#jqxMenu").jqxTree({});
+                })();
+            });
+
+            $("#cy").click(function () {
+                alert("Welsh language selected!");
+                (function () {
+                    var translate = new window.Translate();
+                    currentLng = 'cy-GB';
+                    var attributeName = 'data-tag';
+                    translate.init(attributeName, currentLng);
+                    translate.process();
+                    var builddata2 = function () {
+                        var source = [];
+                        var items = [];
+                        // build hierarchical source.
+                        data = welsh;
+                        for (i = 0; i < data.length; i++) {
+                            var item = data[i];
+                            var label = item["text"];
+                            var parentid = item["parentid"];
+                            var id = item["id"];
+
+                            if (items[parentid]) {
+                                var item = { parentid: parentid, label: label, item: item };
+                                if (!items[parentid].items) {
+                                    items[parentid].items = [];
+                                }
+                                items[parentid].items[items[parentid].items.length] = item;
+                                items[id] = item;
+                            }
+                            else {
+                                items[id] = { parentid: parentid, label: label, item: item };
+                                source[id] = items[id];
+                            }
+                        }
+                        return source;
+                    }
+                    var source2 = builddata2();
+                    var buildUL = function (parent, items) {
+                        $.each(items, function () {
+                            if (this.label) {
+                                //Parent Items Created
+                                var li = $("<li><a 'data-toggle='collapse' class= list-unstyled components'>" + this.label + "</a></li>");
+                                li.appendTo(parent);
+                                //Sub Items Created
+                                if (this.items && this.items.length > 0) {
+                                    var ul = $("<ul class ='collapse list-unstyled'><li><a>" + this.label + "</a></li></ul>");
+                                    ul.appendTo(li);
+                                    buildUL(ul, this.items);
+                                }
+                            }
+                        });
+                    }
+                    var ul = $("<ul class = 'menuitems'></ul>");
+                    $('#jqxMenu').empty();
+                    ul.appendTo("#jqxMenu");
+                    buildUL(ul, source2);
+                    ("#jqxMenu").jqxTree({});
+                })();
+            });
+
+            $("#pt").click(function () {
+                alert("Portuguese language selected!");
+                (function () {
+                    var translate = new window.Translate();
+                    currentLng = 'pt-BR';
+                    var attributeName = 'data-tag';
+                    translate.init(attributeName, currentLng);
+                    translate.process();
+
+                    var builddata2 = function () {
+                        var source = [];
+                        var items = [];
+                        // build hierarchical source.
+                        data = portuguese;
+                        for (i = 0; i < data.length; i++) {
+                            var item = data[i];
+                            var label = item["text"];
+                            var parentid = item["parentid"];
+                            var id = item["id"];
+
+                            if (items[parentid]) {
+                                var item = { parentid: parentid, label: label, item: item };
+                                if (!items[parentid].items) {
+                                    items[parentid].items = [];
+                                }
+                                items[parentid].items[items[parentid].items.length] = item;
+                                items[id] = item;
+                            }
+                            else {
+                                items[id] = { parentid: parentid, label: label, item: item };
+                                source[id] = items[id];
+                            }
+                        }
+                        return source;
+                    }
+                    var source2 = builddata2();
+                    var buildUL = function (parent, items) {
+                        $.each(items, function () {
+                            if (this.label) {
+                                //Parent Items Created
+                                var li = $("<li><a 'data-toggle='collapse' class= list-unstyled components'>" + this.label + "</a></li>");
+                                li.appendTo(parent);
+                                //Sub Items Created
+                                if (this.items && this.items.length > 0) {
+                                    var ul = $("<ul class ='collapse list-unstyled'><li><a>" + this.label + "</a></li></ul>");
+                                    ul.appendTo(li);
+                                    buildUL(ul, this.items);
+                                }
+                            }
+                        });
+                    }
+                    var ul = $("<ul class = 'menuitems'></ul>");
+                    $('#jqxMenu').empty();
+                    ul.appendTo("#jqxMenu");
+                    buildUL(ul, source2);
+                    ("#jqxMenu").jqxTree({});
+                })();
+            });
+
+            $("#ar").click(function () {
+                alert("Arabic language selected!");
+                $('#grids').toggleClass('wrapper-left');
+                $('#sidebar').toggleClass('wrapper-left');
+
+                (function () {
+                    var translate = new window.Translate();
+                    currentLng = 'ar-AE';
+                    var attributeName = 'data-tag';
+                    translate.init(attributeName, currentLng);
+                    translate.process();
+                    var builddata2 = function () {
+                        var source = [];
+                        var items = [];
+                        // build hierarchical source.
+                        data = arabic;
+                        for (i = 0; i < data.length; i++) {
+                            var item = data[i];
+                            var label = item["text"];
+                            var parentid = item["parentid"];
+                            var id = item["id"];
+
+                            if (items[parentid]) {
+                                var item = { parentid: parentid, label: label, item: item };
+                                if (!items[parentid].items) {
+                                    items[parentid].items = [];
+                                }
+                                items[parentid].items[items[parentid].items.length] = item;
+                                items[id] = item;
+                            }
+                            else {
+                                items[id] = { parentid: parentid, label: label, item: item };
+                                source[id] = items[id];
+                            }
+                        }
+                        return source;
+                    }
+                    var source2 = builddata2();
+                    var buildUL = function (parent, items) {
+                        $.each(items, function () {
+                            if (this.label) {
+                                //Parent Items Created
+                                var li = $("<li><a 'data-toggle='collapse' class= list-unstyled components'>" + this.label + "</a></li>");
+                                li.appendTo(parent);
+                                //Sub Items Created
+                                if (this.items && this.items.length > 0) {
+                                    var ul = $("<ul class ='collapse list-unstyled'><li><a>" + this.label + "</a></li></ul>");
+                                    ul.appendTo(li);
+                                    buildUL(ul, this.items);
+                                }
+                            }
+                        });
+                    }
+                    var ul = $("<ul class = 'menuitems'></ul>");
+                    $('#jqxMenu').empty();
+                    ul.appendTo("#jqxMenu");
+                    buildUL(ul, source2);
+                    ("#jqxMenu").jqxTree({});
+
+                })();
+            });
+
+            $("#in").click(function () {
+                alert("Hindu Selected!");
+                $("#wrapper-left").removeClass("wrapper-left");
+
+                (function () {
+                    var translate = new window.Translate();
+                    currentLng = 'in-IN';
+                    var attributeName = 'data-tag';
+                    translate.init(attributeName, currentLng);
+                    translate.process();
+                    var builddata2 = function () {
+                        var source = [];
+                        var items = [];
+                        // build hierarchical source.
+                        data = hindu;
+                        for (i = 0; i < data.length; i++) {
+                            var item = data[i];
+                            var label = item["text"];
+                            var parentid = item["parentid"];
+                            var id = item["id"];
+
+                            if (items[parentid]) {
+                                var item = { parentid: parentid, label: label, item: item };
+                                if (!items[parentid].items) {
+                                    items[parentid].items = [];
+                                }
+                                items[parentid].items[items[parentid].items.length] = item;
+                                items[id] = item;
+                            }
+                            else {
+                                items[id] = { parentid: parentid, label: label, item: item };
+                                source[id] = items[id];
+                            }
+                        }
+                        return source;
+                    }
+                    var source2 = builddata2();
+                    var buildUL = function (parent, items) {
+                        $.each(items, function () {
+                            if (this.label) {
+                                //Parent Items Created
+                                var li = $("<li><a 'data-toggle='collapse' class= list-unstyled components'>" + this.label + "</a></li>");
+                                li.appendTo(parent);
+                                //Sub Items Created
+                                if (this.items && this.items.length > 0) {
+                                    var ul = $("<ul class ='collapse list-unstyled'><li><a>" + this.label + "</a></li></ul>");
+                                    ul.appendTo(li);
+                                    buildUL(ul, this.items);
+                                }
+                            }
+                        });
+                    }
+                    var ul = $("<ul class = 'menuitems'></ul>");
+                    $('#jqxMenu').empty();
+                    ul.appendTo("#jqxMenu");
+                    buildUL(ul, source2);
+                    ("#jqxMenu").jqxTree({});
+                })();
+            });
+        })();
+                                //End select language item from dropdown
+    </script>
+</head>
+<body>
+    <!--<h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>-->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script type="text/javascript" src='//cdnjs.cloudflare.com/ajax/libs/gridstack.js/0.2.6/gridstack.min.js'></script>
+    <script src="/javascripts/gridstack.js"></script>
+
+    <div class="wrapper">
+        <!-- Sidebar Holder -->
+        <nav id="sidebar" class="hidden">
+            <div id="dismiss" class="hidden">
+                <i class="glyphicon glyphicon-arrow-left"></i>
+            </div>
+            <div class="sidebar-header">
+                <h3>Bootstrap Sidebar</h3>
+                <strong id="header-short" class="hidden">BS</strong>
+            </div>
+            <div id='jqxMenu' class="menuitems">
+            </div>
+        </nav>
+
+        <!-- Page Content Holder -->
+        <div id="content">
+          <nav class="navbar navbar-default">
+              <div class="pull-left">
+                  <div class="navbar-header">
+                      <!-- NAV 1 -->
+                      <button type="button" id="sidebarCollapse1" class="btn btn-info navbar-btn hidden">
+                          <i class="glyphicon glyphicon-align-left"></i>
+                          <!--Added data-tag-->   <span data-tag="toggleSidebar">Toggle Sidebar</span>
+                      </button>
+                      <!-- NAV 1 ENDS -->
+                      <!-- NAV 2 -->
+                      <button type="button" id="sidebarCollapse2" class="btn btn-info navbar-btn hidden">
+                          <i class="glyphicon glyphicon-align-left"></i>
+                          <!--Added data-tag-->  <span data-tag="toggleSidebar">Toggle Sidebar</span>
+                      </button>
+                      <!-- NAV 2 ENDS -->
+                      <!-- NAV 3 -->
+                      <button type="button" id="sidebarCollapse3" class="btn btn-info navbar-btn hidden">
+                          <i class="glyphicon glyphicon-align-left"></i>
+                          <!--Added data-tag-->     <span data-tag="toggleSidebar">Toggle Sidebar</span>
+                      </button>
+                      <!-- NAV 3 ENDS -->
+                  </div>
+              </div>
+              <div class="pull-right">
+                  <ul class="nav navbar-nav  navbar-right navbar-custom">
+                      <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+
+                      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span></a></li>
+                  </ul>
+                  <!-- * Start html Add language dropdown *-->
+                  <ul class="nav navbar-nav  navbar-right">
+                      <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="glyphicon glyphicon-globe"></i><span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                              <li><a href="#" id="en">English</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#" id="fr">French</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#" id="pt">Portugese</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#" id="ar">عربى</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#" id="cy">Welsh</a></li>
+                              <li role="separator" class="divider"></li>
+                              <li><a href="#" id="in">Hindu</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+                  <!-- * End html Add language dropdown *-->
+              </div>
+          </nav>
+            <div class="container-fluid" id="container-fluid">
+                <!-- * Start added data-tag on html to Add language dropdown *-->
+                <div id="menus">
+                    <a class="btn btn-default" id="menu_nav_1" href="#" data-tag="menu1">Menu 1</a>
+                    <a class="btn btn-default" id="menu_nav_2" href="#" data-tag="menu2">Menu 2</a>
+                    <a class="btn btn-default" id="menu_nav_3" href="#" data-tag="menu3">Menu 3</a>
+                </div>
+                <br />
+                <div id="grids">
+                    <a class="btn btn-default" id="save-grid" href="#" data-tag="saveGrid">Save Grid</a>
+                    <a class="btn btn-default" id="load-grid" href="#" data-tag="loadGrid">Load Grid</a>
+                    <a class="btn btn-default" id="clear-grid" href="#" data-tag="clearGrid">Clear Grid</a>
+                </div> 
+                <br/> 
+                <hr/>          
+
+   
+

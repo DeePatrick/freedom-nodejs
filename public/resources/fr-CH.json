@@ -1,0 +1,27 @@
+{
+	"mortguageAccount":"Compte d'hypothèque",
+	"mortguageHolder": "Titulaire de Mortguage",
+	"accountStat": "Ce montant n'est pas un chiffre final de règlement",
+	"currentMontlyPayment": "Paiement mensuel actuel",
+	"message": "Prochain paiement dû le:",
+
+	
+    "saveGrid": "Enregistrer la grille",
+    "loadGrid": "Grille de chargement",
+    "clearGrid": "Effacer la grille",
+
+
+    "home" : "Accueil",
+    "about" : "Sur",
+    "pages" : "Pages",
+    "portfolio" : "Portefeuille",
+	"contact": "Contact",
+	
+
+	"moreInfo":"Plus d'informations" ,
+	"toggleSidebar":"bascule barre latérale",
+	
+	"menu1": "Menu1",
+	"menu2": "Menu2",
+	"menu3": "Menu3"
+}

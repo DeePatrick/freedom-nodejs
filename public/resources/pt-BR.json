@@ -1,0 +1,27 @@
+{
+	"mortguageAccount":"Conta hipotecária",
+	"mortguageHolder": "Titular de hipoteca",
+	"accountStat": "Este montante não é uma determinação final",
+	"currentMontlyPayment": "Pagamento mensal atual",
+    "message": "Próximo pagamento devido em:",
+    
+
+    "saveGrid": "Salvar grade",
+    "loadGrid": "Grade de carga",
+    "clearGrid": "Grelha clara",
+
+
+    "home" : "Casa",
+    "about" : "Sobre",
+    "pages" : "Páginas",
+    "portfolio" : "Carteira",
+    "contact": "Contato",
+	
+    "moreInfo":"Mais informações",
+	"toggleSidebar":"alternar barra lateral",
+	
+	"menu1": "Menu1",
+	"menu2": "Menu2",
+    "menu3": "Menu3"
+      
+}

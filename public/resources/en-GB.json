@@ -1,0 +1,29 @@
+{
+	"mortguageAccount":"Mortguage Account",
+	"mortguageHolder": "Mortguage Holder",
+	"accountStat": "This amount is not a final settlement figure",
+	"currentMontlyPayment": "Current monthly payment",
+    "message": "Next payment due on:",
+    
+
+    "menu1": "Menu1",
+    "saveGrid": "Save Grid",
+    "loadGrid": "Load Grid",
+    "clearGrid": "Clear Grid",
+
+
+    "home" : "Home",
+    "about" : "About",
+    "pages" : "Pages",
+    "portfolio" : "Portfolio",
+    "contact": "Contact",
+	
+    "moreInfo":"More Info",
+	"toggleSidebar":"toggleSidebar",
+	
+	"menu1": "menu1",
+	"menu2": "menu2",
+    "menu3": "menu3"
+    
+
+}

@@ -1,0 +1,203 @@
+<% include partials/header %>
+
+<% if(errors != undefined){ %>
+    <ul>
+    <% errors.forEach(function(error){ %>
+        <li><%= error.msg %> </li>
+        <% }) %>
+    </ul>
+<% } %>
+
+
+<h2>Add Application</h2>
+&nbsp;<br/>
+            <div class="container">
+                <form  method="POST"  action="forms/add">
+                    <table class="table table-bordered">
+                        <tr name="w3-black">
+                            <th scope="col" colspan="3" class="color-header font-weight-bold"><strong>A. FIRST APPLICANT INFORMATION</strong></th>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="3" class="font-italic">PERSONAL DETAILS</th>
+                        </tr>
+                        <tr class="w3-lightblue">
+                            <td scope="col">
+                                First Name<span class="star"> *</span>
+                                <input type="text" class="textinput" name="FirstName" />
+                            </td>
+                            <td>
+                                Middle Name<span class="star"> *</span>
+                                <input type="text" class="textinput" name="MiddleName" />
+                            </td>
+                            <td>
+                                Last Name<span class="star"> *</span>
+                                <input type="text" class="textinput"  name="LastName" />
+                            </td>
+                        </tr>
+                        <tr class="w3-lightblue">
+                            <td scope="col">
+                                name / Passport No.<span class="star"> *</span>
+                                <input name="PassportNo" type="text" class="textinput" size="25" />
+                            </td>
+                            <td>
+                                PIN No.<span class="star"> *</span>
+                                <input name ="PinNo" type="text" class="textinput" size="10" />
+                            </td>
+                            <td>
+                                Nationality<span class="star"> *</span>
+                                <input name="Nationality" type="text" class="textinput" size="20" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="3">
+                                Marital Status
+                            </th>
+                        </tr>
+                        <tr>
+                            <div>
+                                <td>
+                                    <div class="col-md-3 radio">
+                                        <label>
+                                            <input name = "MaritalStatus" type="radio" value="Single" />
+                                            Single
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-md-3 radio">
+                                        <label>
+                                            <input name = "MaritalStatus" type="radio" value="Married" />
+                                            Married
+                                        </label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="col-md-4 radio">
+                                        <label>
+                                            <input name = "MaritalStatus" type="radio" value="Divorced" size="20" />
+                                            Divorced
+                                        </label>                      
+                                    </div>
+                                </td>
+
+                            </div>
+                        </tr>
+                        <tr>
+                            <td colspan="1">
+                                Address<span class="star"> *</span>
+                                <input class="textinput" rows="4" name="Address" size="25" />
+                            </td>
+                            <td colspan="1">
+                                Town<span class="star"> *</span>
+                                <input name="Town" class="textinput" />
+                            </td>
+                            <td colspan="1">
+                                Postcode<span class="star"> *</span>
+                                <input name="Postcode" class="textinput" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">
+                                Street<span class="star"> *</span>
+                                <input class="textinput" rows="4" name="Street" size="25" />
+                            </td>
+                            <td colspan="1">
+                                Country<span class="star"> *</span>
+                                <input name ="Country" class="textinput" />
+                            </td>
+                            <td colspan="1">
+                                Telephone No.
+                                <input name="TelephoneNo" class="textinput" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="1">
+                                Mobile No.<span class="star"> *</span>
+                                <input class="textinput" rows="4" name="MobileNo" size="25" />
+                            </td>
+                            <td colspan="1">
+                                Fax
+                                <input name="Fax" class="textinput" type="text" />
+                            </td>
+                            <td colspan="1">
+                                Email<span class="star"> *</span>
+                                <input name="Email" class="textinput" type="email" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="col">
+                                Present Residence (Location or Estate) <span class="star"> *</span>
+                                <input asp-for="PresentResidence" type="text" class="form-control" />
+                            </td>
+                            <td scope="col">
+                                Duration of occupation<span class="star"> *</span>
+                                <input asp-for="DurationOfOccupantion" type="date" class="form-control" />
+                            </td>
+                            <td scope="col">
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="TypeOfOwnership" value="option1"> 100% Owned
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="TypeOfOwnership" value="option2">Under Mortgage
+                                </label>
+                                <label class="checkbox-inline">
+                                    <input type="checkbox" name="TypeOfOwnership" value="option3">Rented
+                                </label>
+                            </td>
+                        </tr>
+                    </table>
+                    
+                    
+                    <table class="table table-bordered">
+                        <tr>
+                            <th scope="col" colspan="3" class="color-header font-weight-bold">EMPLOYMENT INFORMATION</th>
+                        </tr>
+                        <tr>
+                            <td scope="col" colspan="3">
+                                Current Employer<span class="star"> *</span>
+                                <input type="text" class="textinput"  size="75" name="CurrentEmployer" placeholder="Current employer" value="">
+                            </td>
+                        </tr>
+                        <tr class="w3-lightblue">
+                            <td>
+                                Position<span class="star"> *</span>
+                                <input type="text" class="textinput" name="Position" size="35"  placeholder="Position" value="">
+                            </td>
+                            <td colspan="2">
+                                Nature of Employment <span class="star"> *</span>
+                                <input type="text" class="textinput" name="NatureOfEmployment"  />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td scope="col" colspan="4">
+                                Date Hired by current employer <span class="star"> *</span>
+                                <input type="date" class="textinput" name="DateHiredByCurrentEmployer" size="200" name="datehiredbycurrentemployer" />
+                            </td>
+                        </tr>
+
+                        <tr class="w3-lightblue">
+                            <td scope="col" colspan="2">
+                                <span>Nature of Employment of Previous Employer  &NonBreakingSpace; &nbsp;&nbsp;&nbsp;</span>
+                                <input type="text" class="textinput"  size="30" name="previousemployernatureemployement" />                       
+                            </td>
+                            <td>
+                                Duration with previous employer (Years)
+                                <input type="DurationWithPreviousEmployer" class="textinput" name="emp-email" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="col" colspan="3"></th>
+                        </tr>
+                    </table>
+                    <table class="table table-bordered">
+                        <tr>
+                            <th scope="col" class="text-center"><input type="submit" value="Submit" class="btn btn-default" /><a href="#" value="Exit" class="btn btn-default">Exit</a></th>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+            <hr/>
+
+<% include partials/footer %>
+        

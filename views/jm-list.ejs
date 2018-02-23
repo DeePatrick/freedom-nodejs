@@ -1,0 +1,191 @@
+<% include partials/header %>
+
+    <h1><%= title %></h1>
+    <table id="datatable" class="table">
+        <thead>
+            <tr>
+                    <th>
+                        FirstName
+                    </th>
+                    <th>
+                        MiddleName
+                    </th>
+                    <th>
+                        LastName
+                    </th>
+                    <th>
+                        PassportNo
+                    </th>
+                    <th>
+                        PinNo
+                    </th>
+                    <th>
+                        Nationality
+                    </th>
+                    <th>
+                        MaritalStatus
+                    </th>
+                    <th>
+                        Address
+                    </th>
+                    <th>
+                        Town
+                    </th>
+                    <th>
+                        Postcode
+                    </th>
+                    <th>
+                        Street
+                    </th>
+                    <th>
+                        Country
+                    </th>
+                    <th>
+                        TelephoneNo
+                    </th>
+                    <th>
+                        MobileNo
+                    </th>
+                    <th>
+                        Fax
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                    <th>
+                        Present Residence
+                    </th>
+                    <th>
+                        Duration of Occupation
+                    </th>
+                    <th>
+                        Type of Ownership
+                    </th>
+                    <th>
+                        Nature of Employment
+                    </th>
+                    <th>
+                        Previous Employer Nature of Employment
+                    </th> 
+                    <th>
+                        Basic Salary
+                    </th>
+                    <th>
+                        Commission Earned
+                    </th> 
+                    <th>
+                        House Allowance
+                    </th> 
+                    <th>
+                        Other Pay Or Income
+                    </th>  
+                    <th>
+                        Details Of Other Pay
+                    </th>  
+                    <th>
+                        Installment Repayment Period
+                    </th>
+                    <th>
+                        Purpose of Loan
+                    </th>               
+            </tr>
+        </thead>
+        <tbody>
+            <% forms.forEach(function(form){ %>
+            <tr>
+                <td>
+                    <%= form.FirstName %>
+                </td>
+                <td>
+                    <%= form.MiddleName %>
+                </td>
+                
+                <td>
+                    <%= form.LastName %>
+                </td>
+                <td>
+                    <%= form.PassportNo %>
+                </td>
+                <td>
+                    <%= form.PinNo %>
+                </td>
+                <td>
+                    <%= form.Nationality %>
+                </td>
+                <td>
+                    <%= form.MaritalStatus %>
+                </td>
+                <td>
+                    <%= form.Address %>
+                </td>
+                <td>
+                    <%= form.Town %>
+                </td>
+                <td>
+                    <%= form.Postcode %>
+                </td>
+                <td>
+                    <%= form.Street %>
+                </td>
+                <td>
+                    <%= form.Country %>
+                </td>
+                <td>
+                    <%= form.TelephoneNo %>
+                </td>
+                <td>
+                    <%= form.MobileNo %>
+                </td>
+                <td>
+                    <%= form.Fax %>
+                </td>
+                <td>
+                    <%= form.Email %>
+                </td>
+                <td>
+                    <%= form.PresentResidence%>
+                </td>
+                <td>
+                    <%= form.DurationOfOccupantion %>
+                </td>
+                <td>
+                    <%= form.TypeOfOwnership %>
+                </td>
+                <td>
+                    <%= form.NatureOfEmployment %>
+                </td>
+                <td>
+                    <%= form.PreviousEmployerNatureOfEmployment %>
+                </td>
+                <td>
+                        <%= form.BasicSalary %>
+                </td>
+                <td>
+                        <%= form.HouseAllowance %>
+                </td>
+                <td>
+                        <%= form.OtherPayOrIncome %>
+                </td>
+                <td>
+                        <%= form.DetailsOfOtherPay %>
+                </td>
+                <td>
+                        <%= form.AmountRequired %>
+                </td>
+                <td>
+                        <%= form.InstallmentRepaymentPeriod %>
+                </td>
+                <td>
+                        <%= form.PurposeOfLoan %>
+                </td>
+                <td>
+                    <a   class="reviewUser" href="/forms/getform/1 ">Review</a> |
+                    <a  data-id="<%=form.id %>" class="deleteUser" href="#">Delete</a>
+                </td>
+            </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+
+<% include partials/footer %>
